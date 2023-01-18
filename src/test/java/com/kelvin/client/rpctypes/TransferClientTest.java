@@ -1,6 +1,5 @@
-package com.kelvin.client;
+package com.kelvin.client.rpctypes;
 
-import com.kelvin.models.BankServiceGrpc;
 import com.kelvin.models.TransferRequest;
 import com.kelvin.models.TransferServiceGrpc;
 import io.grpc.ManagedChannel;

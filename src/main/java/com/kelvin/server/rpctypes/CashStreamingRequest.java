@@ -1,4 +1,4 @@
-package com.kelvin.server;
+package com.kelvin.server.rpctypes;
 
 import com.kelvin.models.Balance;
 import com.kelvin.models.DepositRequest;

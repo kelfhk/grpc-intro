@@ -1,4 +1,4 @@
-package com.kelvin.server;
+package com.kelvin.server.rpctypes;
 
 import java.util.Map;
 import java.util.function.Function;

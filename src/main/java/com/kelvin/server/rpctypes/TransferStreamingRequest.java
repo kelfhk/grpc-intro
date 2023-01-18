@@ -1,4 +1,4 @@
-package com.kelvin.server;
+package com.kelvin.server.rpctypes;
 
 import com.kelvin.models.Account;
 import com.kelvin.models.TransferRequest;

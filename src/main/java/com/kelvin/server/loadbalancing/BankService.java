@@ -1,6 +1,7 @@
-package com.kelvin.server;
+package com.kelvin.server.loadbalancing;
 
 import com.kelvin.models.*;
+import com.kelvin.server.rpctypes.AccountDatabase;
 import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 
@@ -8,6 +9,9 @@ public class BankService extends BankServiceGrpc.BankServiceImplBase {
     @Override
     public void getBalance(BalanceCheckRequest request, StreamObserver<Balance> responseObserver) {
         int accountNumber = request.getAccountNumber();
+        System.out.println(
+                "Received the request for " + accountNumber
+        );
         Balance balance = Balance.newBuilder()
                 .setAmount(AccountDatabase.getBalance(accountNumber))
                 .build();

@@ -1,4 +1,4 @@
-package com.kelvin.client;
+package com.kelvin.client.rpctypes;
 
 import com.kelvin.models.Balance;
 import io.grpc.stub.StreamObserver;
