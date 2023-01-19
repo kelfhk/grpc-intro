@@ -15,8 +15,8 @@ public class GrpcServer {
     public static void main(String[] args) throws IOException, InterruptedException {
         SslContext sslContext = GrpcSslContexts.configure(
                 SslContextBuilder.forServer(
-                        new File("../ssl-tls/localhost.crt"),
-                        new File("../ssl-tls/localhost.pem")
+                        new File("./ssl-tls/localhost.crt"),
+                        new File("./ssl-tls/localhost.pem")
                 )
         ).build();
 
