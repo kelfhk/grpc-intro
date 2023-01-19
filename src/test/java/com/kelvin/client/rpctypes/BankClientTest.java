@@ -48,7 +48,7 @@ public class BankClientTest {
     @Test
     public void withdrawAsyncTest() throws InterruptedException {
         CountDownLatch latch = new CountDownLatch(1);
-        WithdrawRequest withdrawRequest = WithdrawRequest.newBuilder().setAccountNumber(6).setAmount(50).build();
+        WithdrawRequest withdrawRequest = WithdrawRequest.newBuilder().setAccountNumber(6).setAmount(70).build();
         this.bankServiceStub.withdraw(withdrawRequest, new MoneyStreamingResponse(latch));
         latch.await();
     }

@@ -1,6 +1,10 @@
 package com.kelvin.client.rpctypes;
 
+import com.kelvin.client.metadata.ClientConstants;
 import com.kelvin.models.Money;
+import com.kelvin.models.WithdrawalError;
+import io.grpc.Metadata;
+import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 
 import java.util.concurrent.CountDownLatch;
@@ -22,8 +26,12 @@ public class MoneyStreamingResponse implements StreamObserver<Money> {
 
     @Override
     public void onError(Throwable throwable) {
+//        Status status = Status.fromThrowable(throwable);
+        Metadata metadata = Status.trailersFromThrowable(throwable);
+        WithdrawalError withdrawalError = metadata.get(ClientConstants.WITHDRAWAL_ERROR_KEY);
+
         System.out.println(
-                throwable.getMessage()
+                withdrawalError.getAmount() + ":" + withdrawalError.getErrorMessage()
         );
         latch.countDown();
     }
